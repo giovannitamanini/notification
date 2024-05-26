@@ -25,7 +25,9 @@ export class MailService {
       mailType: type,
     };
 
-    await this.prisma.mail.create({ data: { ...data }, });
+    await this.prisma.mail.create({
+      data: { ...data },
+    });
   }
 
   getDestination(idUser: string) {
@@ -33,7 +35,7 @@ export class MailService {
       case '10':
         return 'user10@teste.com.br';
       case '20':
-        return 'user20@teste.com.br'
+        return 'user20@teste.com.br';
       default:
         return 'default@teste.com.br';
     }
